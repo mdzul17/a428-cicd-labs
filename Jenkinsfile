@@ -1,8 +1,8 @@
 node {
     docker.image('node:16-buster-slim').withRun('-p 3000:3000') {
         stage('Build') {
-            // Inside the stage block, you can have multiple steps
-            // This is equivalent to the "steps" block in Declarative Pipeline
+            sh 'node -v'
+            sh 'npm -v'
             sh 'npm install'
         }
         stage('Test'){
